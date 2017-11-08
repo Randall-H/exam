@@ -1,0 +1,268 @@
+/**
+*
+* General Styling
+*
+*/
+
+@import '../support/variables';
+@import '../support/mixins';
+
+.zola-body_container{
+	width:100%;
+	background-color:#fff;
+
+	.zola-container_wrapper {
+		padding:40px 20px;
+	}
+	.zola-right_align{
+		text-align:right;
+		font-style:italic;
+	}
+	.zola-body_container_separator{
+		display:block;
+		width:50px;
+		background:#000;
+		height:1px;
+		margin:30px auto;
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+	}
+	/**/
+}
+
+// login form
+
+
+.form_loading{
+	max-width: $large-screen;
+	width: 100%;
+
+	.loading_wrapper {
+		padding:20px;
+		margin:0 auto;
+		width:100%;
+		max-width:320px;
+	}
+}
+
+.zola-form_wrapper{
+	max-width: $large-screen;
+	width: 100%;
+	margin: 0 auto;
+
+	&.full_width{
+		margin:0;
+	}
+
+	.zola-form {
+		.zola-form_row {
+			position:relative;
+			margin-bottom:.75rem;
+
+			&.final_row {
+				margin-bottom:0;
+			}
+
+		}
+
+		label {
+			position: absolute;
+			top: 0.8rem;
+			left: 0;
+			font-size: 1rem;
+			cursor: text;
+			@include transition(0.2s, all);
+			text-align: initial;
+
+			&.active {
+				font-size:.8rem;
+				@include transform(translateY(-140%));
+			}
+		}
+
+		input[type="text"],
+		input[type="month"],
+		input[type="email"],
+		input[type="number"],
+		textarea{
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid color('grey', 'darken-1');
+			color:color('grey', 'darken-1');
+			border-radius: 0;
+			outline: none;
+			height: 3rem;
+			width: 100%;
+			font-size: 1rem;
+			margin: 0 0 20px 0;
+			padding: 0;
+			z-index:1;
+			position:relative;
+
+			box-shadow: none;
+			@include transition(0.3s, all);
+
+			&:focus {
+				border-bottom: 1px solid $zola-blue;
+				@include box-shadow(0, 1px, 0, 0, $zola-blue);
+			}
+		}
+
+		textarea{
+			min-height:50px;
+		}
+
+		input[type="password"]{
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid color('grey', 'darken-1');
+			color:color('grey', 'darken-1');
+			border-radius: 0;
+			outline: none;
+			height: 3rem;
+			width: 100%;
+			margin: 0 0 20px 0;
+			padding: 0;
+			z-index:1;
+			position:relative;
+
+			box-shadow: none;
+			@include transition(0.3s, all);
+
+			&:focus {
+				border-bottom: 1px solid $zola-blue;
+				@include box-shadow(0, 1px, 0, 0, $zola-blue);
+			}
+		}
+
+		input[type="checkbox"].filled-in,
+		input[type="radio"].filled-in{
+			position: relative;
+			margin: 0;
+			height: 20px;
+		}
+
+		label.checkbox_radio_label {
+			top:0;
+		}
+	}
+}
+
+
+//
+.zola-dashboard_wrapper{
+	max-width:$large-screen;
+	padding:0 20px;
+	margin:0 auto;
+	overflow: auto;
+
+	.filters_container,
+	.results_container {
+		float:left;
+		width:100%;
+		padding:10px;
+	}
+	.filters_container{
+		max-width:30%;
+		text-align:left;
+
+		h3 {
+			margin: 1rem 0 2rem;
+		}
+	}
+	.results_container{
+		max-width:70%;
+		margin-bottom:2rem;
+
+		.zola-dashboard_content{
+			header {
+				text-align: left;
+				margin: 1rem 0 2rem;
+
+				h2 {
+					margin:0;
+				}
+			}
+
+			.zola-user_wrapper{
+				border:2px solid $off-black;
+				width:33.3%;
+				float:left;
+
+				article {
+					padding: 10px;
+
+					header {
+						text-align:center;
+					}
+				}
+
+				.zola-user_tile{
+
+					&.orange_tile{
+						background:rgba(255,150, 33, 0.4);
+					}
+					&.green_tile{
+						background:rgba(0,150,0, 0.4);
+					}
+					&.blue_tile{
+						background:rgba(0,0,150, 0.4);
+					}
+					&.purple_tile{
+						background:rgba(150,0,150, 0.4);
+					}
+
+					header h2 {
+						font-size:16px;
+						font-weight:600;
+						margin:0 0 0.5rem;
+					}
+					header span {
+						font-size:12px;
+						font-style:italic;
+						margin:0 0 0.5rem;
+					}
+					footer p {
+						font-size:12px;
+						font-weight:400;
+						margin:0;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+// 768px
+@media screen and (max-width: $moderate-screen) {
+
+	.zola-dashboard_wrapper{
+
+		.filters_listing .filter_container{
+			display: inline-block;
+			vertical-align: top;
+			padding: 5px 10px;
+		}
+
+		.filters_container,
+		.results_container {
+			float:none;
+			width:100%;
+			padding:0;
+			max-width:100%;
+		}
+
+		.filters_container h3{
+			margin-bottom:1rem;
+		}
+
+		.zola-user_wrapper{
+			border:2px solid $off-black;
+			width:100%;
+			float:none;
+		}
+
+	}
+}

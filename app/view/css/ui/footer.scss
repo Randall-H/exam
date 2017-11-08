@@ -1,0 +1,167 @@
+/**
+*
+* Footer Styling
+*
+*/
+
+
+.zola-mast_footer{
+	//padding-top:120px;
+	width:100%;
+	background: $zola-blue_halftrans;
+
+	.zola-film-dark {
+		padding-top:120px;
+	}
+
+	.zola-wrapper{
+		padding:0;
+		max-width:100%;
+	}
+	.zola-logo_wrapper,
+	.zola-nav_list{
+		padding:0 20px;
+	}
+
+	.zola-logo_wrapper{
+		font-size: 6rem;
+		line-height: 1rem;
+		text-align: left;
+		max-width: $large-screen;
+		margin: 0 auto;
+
+		.zola-logo{
+			display: inline-block;
+			position: relative;
+			top: 7px;
+
+			&:before{
+				margin:0;
+				position:relative;
+				color:rgba(0, 0, 0, 0.3);
+			}
+		}
+
+	}
+
+	.zola-mast_subfooter{
+		background:rgba(0, 0, 0, 0.3);
+		text-align: left;
+		overflow: auto;
+
+		.wrapper{
+			max-width:$large-screen;
+			margin: 0 auto;
+		}
+
+		sub{
+			color: #fff;
+			display: inline-block;
+			vertical-align: bottom;
+			padding: 0 20px;
+			bottom: 0px;
+		}
+	}
+
+	/**
+	*
+	* Navigation
+	**/
+	.zola-nav_list{
+		line-height: 40px;
+		//z-index: 1;
+		position: relative;
+		float: right;
+
+		.zola-nav_list_wrapper{
+			float:right;
+
+			li {
+				float:left;
+
+				&.last-child {
+
+				}
+			}
+
+			.zola-mast_nav_link{
+				color:#fff;
+				margin: 0 10px;
+				display:block;
+				position:relative;
+				cursor:pointer;
+				@include transition(0.3s, color);
+				font-size:0.8rem;
+
+				&.first-child{
+					margin-left:0;
+				}
+
+				&.last-child{
+					margin-right:0;
+				}
+
+				&:before{
+					content: '';
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 2px;
+					transform: scaleX(0);
+					left:0;
+					background-color: $zola-blue;
+					@include transition(0.2s, all);
+				}
+
+				&:hover,
+				&.active{
+					background-color:transparent;
+					color: $zola-blue;
+
+					&:before{
+						transform: scaleX(1);
+					}
+				}
+
+			}
+		}
+	}
+	.zola-nav_list.zola-nav_list_mobile{
+		display:none;
+	}
+}
+
+// 770px
+@media screen and (max-width: $mobile-screen) {
+
+	/**
+	*
+	* @subfooter
+	**/
+	.zola-mast_footer .zola-logo_wrapper{
+		text-align: center;
+		position: relative;
+	}
+	.zola-mast_footer .zola-logo_wrapper .zola-logo{
+		display:block;
+		top:0;
+	}
+	.zola-mast_footer .zola-mast_subfooter sub{
+		display: block;
+		float: none;
+		line-height: inherit;
+		text-align: center;
+		margin: 1rem 0;
+	}
+	.zola-mast_footer .zola-nav_list{
+		display: block;
+		float: none;
+		text-align: center;
+	}
+	.zola-mast_footer .zola-nav_list .zola-nav_list_wrapper{
+		float:none;
+	}
+	.zola-mast_footer .zola-nav_list .zola-nav_list_wrapper li{
+		float: none;
+	}
+}

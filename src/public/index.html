@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#003c57" />
+    <meta name="display" content="standalone" />
+    <title>Zola</title>
+    <link rel="manifest" href="/manifest.json" />
+    <style>
+        html,
+        body{
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: rgba(1, 180, 192, 1);
+        }
+        #zola-loading{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            display:table;
+            z-index:-1;
+        }
+        .progress {
+            position: relative;
+            height: 4px;
+            display: block;
+            width: 100%;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 0;
+            margin: 0.5rem 0 1rem 0;
+            overflow: hidden;
+        }
+        .indeterminate {
+            background-color: rgba(0, 60, 87, 1);
+        }
+        .indeterminate:before {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            top: 0;
+            left:0;
+            bottom: 0;
+            will-change: left, right;
+            animation: indeterminate 2.1s cubic-bezier(0.650, 0.815, 0.735, 0.395) infinite;
+        }
+        .indeterminate:after {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            top: 0;
+            left:0;
+            bottom: 0;
+            will-change: left, right;
+            animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+            animation-delay: 1.15s;
+        }
+        @keyframes indeterminate {
+            0% {
+                left: -35%;
+                right:100%;
+            }
+            60% {
+                left: 100%;
+                right: -90%;
+            }
+            100% {
+                left: 100%;
+                right: -90%;
+            }
+        }
+        @keyframes indeterminate-short {
+            0% {
+                left: -200%;
+                right: 100%;
+            }
+            60% {
+                left: 107%;
+                right: -8%;
+            }
+            100% {
+                left: 107%;
+                right: -8%;
+            }
+        }
+        .zola-loading_wrapper{
+            display:table-cell;
+            vertical-align: middle;
+        }
+        .zola-loading_brand{
+            width:100%;
+            max-width:75px;
+            margin: 0 auto;
+        }
+        .zola-brand_image{
+            width: 50px;
+            margin: 1rem auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="spotlight" id="zola">
+<main id="zola-master"></main>
+<div id="zola-loading">
+    <div class="zola-loading_wrapper">
+        <div class="zola-loading_brand">
+            <img class="zola-brand_image" src="/assets/img/zolaicon.png" />
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/modernizr-bundle.js" async></script>
+<script type="text/javascript" src="/materialize.min.js"></script>
+<script type="text/javascript" src="/app_bundle.js"></script></body>
+</html>

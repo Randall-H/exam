@@ -1,0 +1,35 @@
+/**
+*
+* Form general Styling from Materialize.css
+*
+*/
+
+// Remove Focus Boxes
+select:focus {
+	outline: $select-focus;
+}
+
+button:focus {
+	outline: none;
+	background-color: $button-background-focus;
+}
+
+label {
+	font-size: $label-font-size;
+	color: $off-black;
+}
+
+form {
+	label,
+	input,
+	textarea{
+		-webkit-tap-highlight-color:  transparent;
+	}
+}
+
+@import 'checkbox';
+@import 'switch';
+@import 'select';
+@import 'input';
+@import 'loader';
+@import 'toast';

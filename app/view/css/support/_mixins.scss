@@ -1,0 +1,33 @@
+/**
+*
+* Mixins
+*
+*/
+
+@mixin transition($duration , $subject) {
+	-ms-transition: $duration $subject ease-in-out;
+	-o-transition: $duration $subject ease-in-out;
+	-moz-transition: $duration $subject ease-in-out;
+	-webkit-transition: $duration $subject ease-in-out;
+	transition: $duration $subject ease-in-out;
+}
+@mixin box-shadow($hor, $vert, $blur, $spread, $color) {
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+	zoom: 1;
+
+	-moz-box-shadow: $hor $vert $blur $spread $color;
+	-webkit-box-shadow: $hor $vert $blur $spread $color;
+	box-shadow: $hor $vert $blur $spread $color;
+}
+@mixin transform ($jutsu) {
+	-ms-transform: $jutsu;
+	-o-transform: $jutsu;
+	-moz-transform: $jutsu;
+	-webkit-transform: $jutsu;
+	transform: $jutsu;
+}
+@mixin animate () {
+	animation-duration: 0.3s;
+	animation-fill-mode: both;
+}

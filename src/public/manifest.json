@@ -1,0 +1,16 @@
+{
+  "name": "Zola.com",
+  "short_name": "Zola",
+  "icons": [
+    {
+      "src": "./assets/img/zolaicon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#003c57",
+  "background_color" : "#01b4c0",
+  "start_url": "/"
+}

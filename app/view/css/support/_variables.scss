@@ -1,0 +1,129 @@
+/**
+*
+* Variables
+*
+*/
+
+@import './branding';
+
+$zola-teal: color('teal', 'base');
+$zola-blue: color('blue', 'base');
+/**/
+$zola-teal_halftrans: rgba(1, 180, 192, 0.5); // 01b4c0
+$zola-teal_mosttrans: rgba(1, 180, 192, 0.25); // 01b4c0
+$zola-teal_leasttrans: rgba(1, 180, 192, 0.75); // 01b4c0
+/**/
+$zola-blue_halftrans: rgba(0, 60, 87, 0.5); // 003c57
+$zola-blue_mosttrans: rgba(0, 60, 87, 0.25); // 003c57
+$zola-blue_leasttrans: rgba(0, 60, 87, 0.75); // 003c57
+/**/
+$off-black: rgba(0, 0, 0, 0.87) !default;
+/**/
+$success-color: color("success", "base") !default;
+$error-color: color("error", "base") !default;
+/**/
+$link-color: color("grey", "base") !default;
+$input-border-color: color("grey", "base") !default;
+/**/
+
+// typography
+$zola-typeface: "Roboto", sans-serif;
+$zola-s_font_size:12px;
+$zola-m_font_size:18px;
+$zola-l_font_size:36px;
+
+// rwd
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1241px !default;
+/**/
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1240px !default;
+$moderate-screen: 768px !default;
+$mobile-screen: 470px !default;
+/**/
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+/**/
+
+// Text Inputs + Textarea
+$input-height: 3rem !default;
+$input-border: 1px solid $input-border-color !default;
+$input-background: #fff !default;
+$input-error-color: $error-color !default;
+$input-success-color: $success-color !default;
+$input-focus-color: $zola-blue !default;
+$input-font-size: 1rem !default;
+$input-margin-bottom: 20px;
+$input-margin: 0 0 $input-margin-bottom 0 !default;
+$input-padding: 0 !default;
+$input-transition: all .3s !default;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$placeholder-text-color: lighten(#888, 20%) !default;
+
+// Shared styles
+$button-border: none !default;
+$button-background-focus: lighten($zola-blue, 4%) !default;
+$button-font-size: 1rem !default;
+$button-icon-font-size: 1.3rem !default;
+$button-height: 36px !default;
+$button-padding: 0 2rem !default;
+$button-radius: 2px !default;
+
+// Disabled styles
+$button-disabled-background: #DFDFDF !default;
+$button-disabled-color: #9F9F9F !default;
+
+// Radio Buttons
+$radio-fill-color: $zola-blue !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
+
+// Select
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-focus: 1px solid lighten($zola-blue, 47%) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
+
+// Dropdowns
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color:$zola-blue !default;
+$dropdown-item-height: 50px !default;
+
+// Switches
+$switch-bg-color:$zola-blue !default;
+$switch-checked-lever-bg: desaturate($zola-blue, 25%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: #818181 !default;
+$switch-radius: 15px !default;
+
+// Gutters
+$num-cols: 12 !default;
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// sidenav
+$sidenav-font-size: 14px !default;
+$sidenav-font-color: rgba(0,0,0,.87) !default;
+$sidenav-bg-color: #fff !default;
+$sidenav-padding: 16px !default;
+$sidenav-item-height: 48px !default;
+$sidenav-line-height: $sidenav-item-height !default;
+
+// toast dialog
+$toast-height: 48px !default;
+$toast-color: #323232 !default;
+$toast-text-color: #fff !default;
