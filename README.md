@@ -23,18 +23,18 @@
 * npm run dev_watch  => start up local environment webpack (outputs @ dir "/public", uses app.html )
 * npm run prod_build => compile production ready package (outputs @ dir "/src", uses prodapp.html )
 
-### Production Env ###
-## Performance: Loadtime_[to-be-tested], DOMContentedLoaded_[to-be-tested] ##
-
-### Staging Env ###
-## Performance: Loadtime_[to-be-tested], DOMContentedLoaded_[to-be-tested] ##
-
-### Local Env ###
-## Performance: Loadtime_[870ms-1.81s], DOMContentedLoaded_[863ms-1.32s] ##
-
-
 ### Architecture ###
 
 * The app enters at init.js. From there localstorage is checked and default data is stored as the App's beginning data.
 * You will find all the frontend functionality inside the '/app' dir and the server functionality inside the
 * '/server' dir.
+
+### Production Env ###
+* Performance: Loadtime_[to-be-tested], DOMContentedLoaded_[to-be-tested]
+
+### Staging Env ###
+* Performance: Loadtime_[to-be-tested], DOMContentedLoaded_[to-be-tested]
+
+### Local Env ###
+* Performance: Loadtime_[870ms-1.81s], DOMContentedLoaded_[863ms-1.32s]
+
