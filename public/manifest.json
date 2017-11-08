@@ -3,19 +3,9 @@
   "short_name": "Zola",
   "icons": [
     {
-      "src": "./assets/icons/brand-1x.png",
+      "src": "./assets/img/zolaicon.png",
       "type": "image/png",
       "sizes": "48x48"
-    },
-    {
-      "src": "./assets/icons/brand-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "./assets/icons/brand-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
     }
   ],
   "display": "standalone",

@@ -31339,7 +31339,7 @@ var AccountComp = function (_Component) {
 			if (this.props.isPrivate && !this.props.isLoggedIn) {
 				console.log('::____AUTH_ACCOUNT_CHECK____::');
 
-				this.props.history.push(this.props.version + 'login');
+				this.props.history.push('/login');
 			}
 		}
 	}, {
