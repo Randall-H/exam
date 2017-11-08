@@ -25,8 +25,9 @@ import { API } 				from '../helpers/API';
 /**
  * __propTypes__
  *
- * data(obj)		=> cached local storage data
- * children(obj)   	=> all routes from history router
+ * dataStorage(obj)			 => cached local storage data
+ * children(obj)   			 => all routes from history router
+ * updateDataStorage(method) => func to update localStorage
  **/
 export default class Zola extends Component {
 
@@ -35,7 +36,7 @@ export default class Zola extends Component {
 	 * __State__
 	 * @isAuth(bool)   => is currentUser signed in
 	 * @token(str)     => currentAuth token
-	 * @session(obj)   => properties: account, uid, email, displayName, photoURL, phoneNumber, emailVerified
+	 * @session(obj)   => profile properties: uid, email, displayName
 	 **/
 	constructor(props) {
 		super(props);
@@ -97,7 +98,7 @@ export default class Zola extends Component {
 	/* Private functions (only in this component) */
 
 	_handleLoginEvent ({type, data}) {
-		console.log('@class_Zola, @method_componentWillMount()____eventEmitter_NAVIGATE_CALLBACK({request})____');
+		console.log('@class_Zola, @method__handleLoginEvent()____eventEmitter_NAVIGATE_CALLBACK({type, data})____', {type, data});
 
 		if (type === "login") {
 			API.loginUser(data).then( (response) => {

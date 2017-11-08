@@ -116,7 +116,7 @@
 				&:hover,
 				&.active{
 					background-color:transparent;
-					color: $zola-blue;
+					color: $zola-teal;
 
 					&:before{
 						transform: scaleX(1);
@@ -131,7 +131,7 @@
 	}
 }
 
-// 770px
+// 470px
 @media screen and (max-width: $mobile-screen) {
 
 	/**

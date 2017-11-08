@@ -51,37 +51,41 @@ class AccountComp extends Component {
 
 		//console.log('@class_AccountComp, @method_componentDidMount()____');
 
-		API.getUsers(this.props.token).then( (usersResponse) => {
+		if (!!this.props.token) {
+			API.getUsers(this.props.token).then( (usersResponse) => {
 
-			var USERS = usersResponse;
-			console.log(':____API_getUsers_SUCCESS____:', USERS);
+				var USERS = usersResponse;
+				console.log(':____API_getUsers_SUCCESS____:', USERS);
 
-			this.setState(function () {
+				this.setState(function () {
 
-				var categories = [];
+					var categories = [];
 
-				USERS.data.map((user) => {
-					categories.push(user.category);
+					USERS.data.map((user) => {
+						categories.push(user.category);
+					});
+
+					// get rid of duplicate categories
+					var tempData = new Set(categories);
+					var userCategories = Array.from(tempData);
+					// cache original data of users
+					var ORIG = [].concat(USERS.data);
+
+					return {
+						isLoading : false,
+						categories : userCategories,
+						users     : USERS.data,
+						origData  : ORIG
+					}
 				});
+			}).catch( (e) => {
+				console.log(':____API_getUsers_ERROR____:', e);
 
-				// get rid of duplicate categories
-				var tempData = new Set(categories);
-				var userCategories = Array.from(tempData);
-				// cache original data of users
-				var ORIG = [].concat(USERS.data);
-
-				return {
-					isLoading : false,
-					categories : userCategories,
-					users     : USERS.data,
-					origData  : ORIG
-				}
+				Materialize.toast('Could not retrieve Users. Try refreshing page.', 2000);
 			});
-		}).catch( (e) => {
-			console.log(':____API_getUsers_ERROR____:', e);
-
-			Materialize.toast('Could not retrieve Users. Try refreshing page.', 2000);
-		});
+		} else {
+			console.log('@class_AccountComp, @method_componentDidMount()____: NO_AUTH');
+		}
 
 	}
 
@@ -288,7 +292,7 @@ class AccountComp extends Component {
 										<li className="input_wrapper">
 											<Dropdown
 												selectName={"sortBy"}
-												selectLabel={"sort users"}
+												selectLabel={"sort users by:"}
 												selectClass={""}
 												defaultOption={"Featured"}
 												defaultVal={this.state.currentFilter}

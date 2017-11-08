@@ -34,6 +34,11 @@
 		top:1px;
 	}
 
+	&:focus {
+		color:#fff;
+		border:none;
+	}
+
 	&.transparent{
 		background:transparent;
 		-webkit-box-shadow: none;

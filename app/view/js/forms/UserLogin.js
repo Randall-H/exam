@@ -201,7 +201,7 @@ export default class UserLogin extends Component {
 						<button type="submit"
 								name="login"
 								onClick={this.handleSubmit}
-								className="zola-form_button zola-standard_button"
+								className="zola-form_button zola-standard_button waves-effect waves-light"
 								disabled={!this.state.userpass || !this.state.useremail}>
 							login
 						</button>

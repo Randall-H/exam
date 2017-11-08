@@ -1,12 +1,17 @@
 /**
  *
  *
- * @notes   => authentication middleware
+ * @notes   => authentication middleware. Documentation for the package jsonwebtoken can be found
+ * at https://www.npmjs.com/package/jsonwebtoken for the 'jwt.sign' and 'jwt.verify' methods
  **/
 
 var jwt = require('jsonwebtoken');
 
 module.exports = {
+
+	/**
+	 * handle the validation of the Login.js data that was submitted
+	 **/
 	validate : function (request, response, next) {
 
 		if (!request.body.email || !request.body.password) {
@@ -14,8 +19,10 @@ module.exports = {
 			response.json({ error: "Email and password must be set." });
 
 		} else {
-
+			// check specifically for the user:pass combo given in exam
 			if (request.body.email === "test@zola.com" && request.body.password === "zola#frontend") {
+				// there's no real need for a uid to be added to the session with the token but I think
+				// its more realistic to add in anyway.
 				request.uid  = "thisrandomstring";
 
 				next();
@@ -27,15 +34,12 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * parse token that was submitted with the getUsers request by the newly authenticated user
+	 **/
 	verify : function (request, response, next) {
 
-		console.log('hllllllooooo');
-		console.log(request.query);
-		console.log(request.body);
-
 		var token =  request.query.token || req.body.token;
-
-		console.log(token);
 
 		jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
 
@@ -50,6 +54,9 @@ module.exports = {
 		})
 	},
 
+	/**
+	 * send the needed data back to the client after the verify middleware method above
+	 **/
 	login : function (request, response, next) {
 
 

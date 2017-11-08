@@ -74,7 +74,7 @@ class HomeComp extends Component {
 													key={"/login"}
 													exact
 													activeClassName='active'
-													className='zola-mast_nav_link zola-standard_button'
+													className='zola-mast_nav_link zola-standard_button '
 													to={"/login"}
 												>
 													Login
